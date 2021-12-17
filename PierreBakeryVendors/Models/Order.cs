@@ -5,6 +5,7 @@ namespace PierreBakeryVendors.Models
 {
   public class Order
   {
+    private static List<Order> _orderList = new List<Order> {};
     public string orderTitle { get; set; }
     public string orderDescription { get; set; }
     public string orderDate { get; set; }
@@ -16,6 +17,11 @@ namespace PierreBakeryVendors.Models
       orderDescription = description;
       orderDate = date;
       orderPrice = price;
+    }
+
+    public static List<Order> GetOrderList()
+    {
+      return _orderList;
     }
   }
 }
