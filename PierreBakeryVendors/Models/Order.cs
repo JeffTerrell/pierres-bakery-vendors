@@ -19,7 +19,7 @@ namespace PierreBakeryVendors.Models
       orderDescription = description;
       orderDate = date;
       orderPrice = price;
-      orderId = 4;
+      orderId = _orderList.Count;
     }
 
     public static List<Order> GetOrderList()

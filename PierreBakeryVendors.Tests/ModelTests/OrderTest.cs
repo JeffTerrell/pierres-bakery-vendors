@@ -95,7 +95,7 @@ namespace PierreBakeryVendors.Tests
       Order newOrder = new Order(orderTitle, "Order Description", "01/01/2011", 1);
 
       //Act
-      int result = 2;
+      int result = newOrder.orderId;
 
       //Assert
       Assert.AreEqual(1, result);
