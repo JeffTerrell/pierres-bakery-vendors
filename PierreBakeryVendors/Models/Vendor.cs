@@ -8,12 +8,15 @@ namespace PierreBakeryVendors.Models
     private static List<Vendor> _vendorList = new List<Vendor> {};
     public string vendorName { get; set; }
     public string vendorDescription { get; set; }
+
+    public int vendorId { get; set; }
     
     public Vendor(string name, string description)
     {
       vendorName = name;
       _vendorList.Add(this);
       vendorDescription = description;
+      vendorId = 2;
     }
 
     public static List<Vendor> GetVendorList()

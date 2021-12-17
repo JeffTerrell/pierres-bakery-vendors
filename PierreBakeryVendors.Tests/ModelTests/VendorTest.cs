@@ -79,5 +79,20 @@ namespace PierreBakeryVendors.Tests
       //Assert
       CollectionAssert.AreEqual(newVendorList, result);
     }
+
+    [TestMethod]
+    public void GetVendorId_ReturnsVendorId_Int()
+    {
+      //Arrange
+      string vendorName = "Homer's Dohnuts";
+      string vendorDescription = "Simpsons themed donut shop, also sells coffee";
+      Vendor newVendor = new Vendor(vendorName, vendorDescription);
+
+      //Act
+      int result = newVendor.vendorId;
+
+      //Assert
+      Assert.AreEqual(1, result);
+    }
   }
 }    
