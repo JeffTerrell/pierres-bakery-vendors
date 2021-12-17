@@ -26,7 +26,7 @@ namespace PierreBakeryVendors.Models
 
     public static Vendor Find(int searchId)
     {
-      return _vendorList[searchId];
+      return _vendorList[searchId - 1];
     }
 
     public static void ClearAll()
