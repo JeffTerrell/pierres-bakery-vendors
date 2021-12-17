@@ -1,7 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Collections.Generic;
 using PierreBakeryVendors.Models;
-using System;
 
 namespace PierreBakeryVendors.Tests
 {
@@ -111,6 +111,28 @@ namespace PierreBakeryVendors.Tests
 
       //Assert
       Assert.AreEqual(newVendor2, result);
-    }    
+    }
+
+    [TestMethod]
+    public void AddOrder_AssociatesOrderTitleWithVendorName_OrderList()
+    {
+      //Arrange
+      string orderTitle = "Test Order";
+      string orderDescription = "Order Description1";
+      string orderDate = "01/01/2011";
+      int orderPrice = 50;
+      Order newOrder = new Order(orderTitle, orderDescription, orderDate, orderPrice);
+      List<Order> newOrderList = new List<Order> { newOrder };
+      string vendorName = "Homer's Dohnuts";
+      string vendorDescription = "Simpsons themed donut shop, also sells coffee";
+      Vendor newVendor = new Vendor(vendorName, vendorDescription);
+      newVendor.AddOrder(newOrder);
+
+      //Act
+      List<Order> result = newVendor.Orders;
+
+      //Assert
+      CollectionAssert.AreEqual(newOrderList, result);
+    }          
   }
 }    
