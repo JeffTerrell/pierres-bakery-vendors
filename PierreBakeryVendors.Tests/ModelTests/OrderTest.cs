@@ -85,6 +85,21 @@ namespace PierreBakeryVendors.Tests
 
       //Assert
       CollectionAssert.AreEqual(newOrderList, result);
-    }  
+    }
+    
+    [TestMethod]
+    public void GetOrderId_ReturnsOrderId_Int()
+    {
+      //Arrange
+      string orderTitle = "Homer's Dohnuts";
+      Order newOrder = new Order(orderTitle, "Order Description", "01/01/2011", 1);
+
+      //Act
+      int result = 2;
+
+      //Assert
+      Assert.AreEqual(1, result);
+    }    
+
   }  
 }

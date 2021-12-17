@@ -10,6 +10,7 @@ namespace PierreBakeryVendors.Models
     public string orderDescription { get; set; }
     public string orderDate { get; set; }
     public int orderPrice { get; set; }
+    public int orderId { get; }
 
     public Order(string title, string description, string date, int price)
     {
@@ -18,6 +19,7 @@ namespace PierreBakeryVendors.Models
       orderDescription = description;
       orderDate = date;
       orderPrice = price;
+      orderId = 4;
     }
 
     public static List<Order> GetOrderList()
