@@ -6,7 +6,7 @@ namespace PierreBakeryVendors.Models
 
     public Order(string title)
     {
-      orderTitle = "Order-001";
+      orderTitle = title;
     }
   }
 }
