@@ -15,7 +15,7 @@ namespace PierreBakeryVendors.Models
       orderTitle = title;
       orderDescription = description;
       orderDate = date;
-      orderPrice = 50;
+      orderPrice = price;
     }
   }
 }
