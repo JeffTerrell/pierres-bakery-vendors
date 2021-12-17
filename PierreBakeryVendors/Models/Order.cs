@@ -14,7 +14,7 @@ namespace PierreBakeryVendors.Models
     {
       orderTitle = title;
       orderDescription = description;
-      orderDate = "01/01/2011";
+      orderDate = date;
     }
   }
 }
