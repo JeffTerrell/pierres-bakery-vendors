@@ -53,18 +53,28 @@ namespace PierreBakeryVendors.Tests
       Vendor newVendor1 = new Vendor(vendorNameOne, vendorDescriptionOne);
       Vendor newVendor2 = new Vendor(vendorNameTwo, vendorDescriptionTwo);
       List<Vendor> newVendorList = new List<Vendor> { newVendor1, newVendor2 };
-      foreach (Vendor thisVendor in newVendorList)
-      {
-        Console.WriteLine("Output result Name: " + thisVendor.vendorName);
-        Console.WriteLine("Output result Description: " + thisVendor.vendorDescription);
-      }
+
       //Act
       List<Vendor> result = Vendor.GetVendorList();
-      foreach (Vendor thisVendor in result)
-      {
-        Console.WriteLine("Output result Name: " + thisVendor.vendorName);
-        Console.WriteLine("Output result Description: " + thisVendor.vendorDescription);
-      }
+
+      //Assert
+      CollectionAssert.AreEqual(newVendorList, result);
+    }
+
+    [TestMethod]
+    public void GetVendorList_ReturnsAllVendorNamesInList_VendorList()
+    {
+      //Arrange
+      string vendorNameOne = "Homer's Dohnuts";
+      string vendorDescriptionOne = "Simpsons themed donut shop, also sells coffee";
+      string vendorNameTwo = "Java's Ark Coffee House";
+      string vendorDescriptionTwo = "Large coffee shop with multiple locations, also sells muffins and pastries";
+      Vendor newVendor1 = new Vendor(vendorNameOne, vendorDescriptionOne);
+      Vendor newVendor2 = new Vendor(vendorNameTwo, vendorDescriptionTwo);
+      List<Vendor> newVendorList = new List<Vendor> { newVendor1, newVendor2 };
+
+      //Act
+      List<Vendor> result = Vendor.GetVendorList();
 
       //Assert
       CollectionAssert.AreEqual(newVendorList, result);
