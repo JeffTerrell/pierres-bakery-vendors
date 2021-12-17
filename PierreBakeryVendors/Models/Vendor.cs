@@ -4,10 +4,12 @@ namespace PierreBakeryVendors.Models
   public class Vendor
   {
 
-    public string Name { get; set; }
-    public Vendor(string name)
+    public string vendorName { get; set; }
+    public string vendorDescription { get; set; }
+    public Vendor(string name, string description)
     {
-      Name = name;
+      vendorName = name;
+      vendorDescription = "test description";
     }
   }
 }
