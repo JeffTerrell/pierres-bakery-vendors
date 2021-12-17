@@ -14,6 +14,7 @@ namespace PierreBakeryVendors.Models
     public Order(string title, string description, string date, int price)
     {
       orderTitle = title;
+      _orderList.Add(this);
       orderDescription = description;
       orderDate = date;
       orderPrice = price;
@@ -22,6 +23,11 @@ namespace PierreBakeryVendors.Models
     public static List<Order> GetOrderList()
     {
       return _orderList;
+    }
+
+    public static void ClearAll()
+    {
+      _orderList.Clear();
     }
   }
 }
