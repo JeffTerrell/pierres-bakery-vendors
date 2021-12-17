@@ -9,7 +9,7 @@ namespace PierreBakeryVendors.Models
     public Vendor(string name, string description)
     {
       vendorName = name;
-      vendorDescription = "test description";
+      vendorDescription = description;
     }
   }
 }
