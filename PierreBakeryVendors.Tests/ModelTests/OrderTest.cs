@@ -91,7 +91,7 @@ namespace PierreBakeryVendors.Tests
     public void GetOrderId_ReturnsOrderId_Int()
     {
       //Arrange
-      string orderTitle = "Homer's Dohnuts";
+      string orderTitle = "Test Order";
       Order newOrder = new Order(orderTitle, "Order Description", "01/01/2011", 1);
 
       //Act
@@ -101,5 +101,28 @@ namespace PierreBakeryVendors.Tests
       Assert.AreEqual(1, result);
     }    
 
+    [TestMethod]
+    public void FindOrder_ReturnsCorrectOrderInListFromId_Order()
+    {
+      //Arrange
+      string orderTitleOne = "Test Order";
+      string orderDescriptionOne = "Order Description1";
+      string orderDateOne = "01/01/2011";
+      int orderPriceOne = 50;
+      string orderTitleTwo = "Test Order 2";
+      string orderDescriptionTwo = "Order Description2";
+      string orderDateTwo = "01/02/2011";
+      int orderPriceTwo = 100;
+
+      Order newOrderOne = new Order(orderTitleOne, orderDescriptionOne, orderDateOne, orderPriceOne);
+      Order newOrderTwo = new Order(orderTitleTwo, orderDescriptionTwo, orderDateTwo, orderPriceTwo);
+      List<Order> newOrderList = new List<Order> { newOrderOne, newOrderTwo };
+
+      //Act
+      Order result = Order.Find(2);
+
+      //Assert
+      Assert.AreEqual(newOrderTwo, result);
+    }   
   }  
 }

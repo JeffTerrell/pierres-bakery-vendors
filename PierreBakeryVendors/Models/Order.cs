@@ -27,6 +27,10 @@ namespace PierreBakeryVendors.Models
       return _orderList;
     }
 
+    public static Order Find(int searchId)
+    {
+      return _orderList[searchId];
+    }
     public static void ClearAll()
     {
       _orderList.Clear();
