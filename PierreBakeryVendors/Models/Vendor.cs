@@ -20,5 +20,10 @@ namespace PierreBakeryVendors.Models
     {
       return _vendorList;
     }
+
+    public static void ClearAll()
+    {
+      _vendorList.Clear();
+    }
   }
 }

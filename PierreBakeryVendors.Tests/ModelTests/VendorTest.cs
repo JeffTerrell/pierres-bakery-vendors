@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using PierreBakeryVendors.Models;
 using System;
 
-namespace ToDoList.Tests
+namespace PierreBakeryVendors.Tests
 {
   [TestClass]
-  public class CategoryTests
+  public class VendorTests : IDisposable
   {
+
+    public void Dispose()
+    {
+      Vendor.ClearAll();
+    }
 
     [TestMethod]
     public void GetVendorName_ReturnsVendorName_String()
