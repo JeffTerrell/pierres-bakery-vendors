@@ -7,7 +7,7 @@ namespace PierreBakeryVendors.Models
     public string Name { get; set; }
     public Vendor(string name)
     {
-      Name = "Jeff";
+      Name = name;
     }
   }
 }
