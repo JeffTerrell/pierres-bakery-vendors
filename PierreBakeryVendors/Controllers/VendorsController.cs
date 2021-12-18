@@ -28,15 +28,28 @@ namespace PierreBakeryVendors.Controllers
       return View();
     } 
 
-    [HttpGet("/vendors/{id}")]
-    public ActionResult Show(int id)
+    [HttpGet("/vendors/{vendorId}")]
+    public ActionResult Show(int vendorId)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
-      Vendor selectedVendor = Vendor.Find(id);
+      Vendor selectedVendor = Vendor.Find(vendorId);
       List<Order> vendorOrders = selectedVendor.Orders;
-      model.Add("vendors", selectedVendor);
+      model.Add("vendor", selectedVendor);
       model.Add("orders", vendorOrders);
       return View(model);
     }
+    
+    [HttpPost("/vendors/{vendorId}/orders")]
+    public ActionResult Create(int vendorId, string orderTitle, string orderDescription, string orderDate, int orderPrice)
+    {
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      Vendor foundVendor = Vendor.Find(vendorId);
+      Order newOrder = new Order(orderTitle, orderDescription, orderDate, orderPrice);
+      foundVendor.AddOrder(newOrder);
+      List<Order> vendorOrders = foundVendor.Orders;
+      model.Add("orders", vendorOrders);
+      model.Add("vendor", foundVendor);
+      return View("Show", model);
+    }  
   }
 }

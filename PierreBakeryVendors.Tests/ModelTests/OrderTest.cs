@@ -123,6 +123,6 @@ namespace PierreBakeryVendors.Tests
 
       //Assert
       Assert.AreEqual(newOrderTwo, result);
-    }   
+    }      
   }  
 }

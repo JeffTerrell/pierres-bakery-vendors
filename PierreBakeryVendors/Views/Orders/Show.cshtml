@@ -1,0 +1,10 @@
+<h1>Order Details: </h1>
+
+<h2>Order Title: @Model["order"].orderTitle</h2>
+<h2>Order Description: @Model["order"].orderDescription</h2>
+<h2>Order Date: @Model["order"].orderDate</h2>
+<h2>Order Price: @Model["order"].orderPrice</h2>
+<h3>Vendor: @Model["vendor"].vendorName</h3>
+
+<a href='/vendors/@Model["vendor"].vendorId/orders/new'>Add additional order</a>
+<a href='/vendors'>View all vendors</a>
