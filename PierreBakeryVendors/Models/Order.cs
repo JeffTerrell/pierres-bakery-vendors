@@ -9,10 +9,10 @@ namespace PierreBakeryVendors.Models
     public string orderTitle { get; set; }
     public string orderDescription { get; set; }
     public string orderDate { get; set; }
-    public int orderPrice { get; set; }
+    public float orderPrice { get; set; }
     public int orderId { get; }
 
-    public Order(string title, string description, string date, int price)
+    public Order(string title, string description, string date, float price)
     {
       orderTitle = title;
       _orderList.Add(this);

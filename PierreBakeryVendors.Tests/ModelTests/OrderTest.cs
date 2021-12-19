@@ -60,11 +60,11 @@ namespace PierreBakeryVendors.Tests
     public void GetOrderPrice_ReturnsOrderPrice_Int()
     {
       //Arrange
-      int orderPrice = 100;
+      float orderPrice = 100;
       Order newOrder = new Order("Order Title", "Order Description", "01/01/2011", orderPrice);
 
       //Act
-      int result = newOrder.orderPrice;
+      float result = newOrder.orderPrice;
 
       //Assert
       Assert.AreEqual(orderPrice, result);
@@ -108,11 +108,11 @@ namespace PierreBakeryVendors.Tests
       string orderTitleOne = "Test Order";
       string orderDescriptionOne = "Order Description1";
       string orderDateOne = "01/01/2011";
-      int orderPriceOne = 50;
+      float orderPriceOne = 50;
       string orderTitleTwo = "Test Order 2";
       string orderDescriptionTwo = "Order Description2";
       string orderDateTwo = "01/02/2011";
-      int orderPriceTwo = 100;
+      float orderPriceTwo = 100;
 
       Order newOrderOne = new Order(orderTitleOne, orderDescriptionOne, orderDateOne, orderPriceOne);
       Order newOrderTwo = new Order(orderTitleTwo, orderDescriptionTwo, orderDateTwo, orderPriceTwo);
