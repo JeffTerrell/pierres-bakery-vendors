@@ -14,7 +14,7 @@
 
 ## Description
 
-A web application that allows a user to create vendors and add their corresponding orders. This information is saved so that a user can access a specific vendor and view all of that vendor's orders. There is also functionality that allows a user to delete vendors or items of their choosing.
+A web application that allows a user to create vendors and add their corresponding orders. This information is saved so that a user can access a specific vendor and view all of that vendor's orders. Order details include a title, description, date, and price.
 
 ## Setup/Installation Requirements
 
